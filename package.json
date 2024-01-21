@@ -8,10 +8,12 @@
     "sam:test": "jest --testPathPattern=serverless/__tests__/*",
     "test:ci": "ng test --no-watch",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint:ng": "ng lint",
     "e2e": "ng e2e",
     "prepare": "husky install",
-    "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged"
+    "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged",
+    "lint:commit": "commitlint --from=HEAD~2"
   },
   "private": true,
   "dependencies": {
@@ -44,9 +46,9 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jasmine": "^3.6.11",
     "@types/node": "^14.17.0",
-    "@typescript-eslint/eslint-plugin": "4.23.0",
-    "@typescript-eslint/parser": "4.23.0",
-    "eslint": "^7.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jasmine": "^4.1.2",
